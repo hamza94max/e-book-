@@ -9,9 +9,6 @@
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent">
-
-
-
    <androidx.cardview.widget.CardView
        android:id="@+id/pic"
        android:layout_width="wrap_content"
@@ -20,14 +17,8 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@drawable/bb"
-          android:onClick="bio"
-
-        />
+          android:onClick="bio" />
    </androidx.cardview.widget.CardView>
-
-
-
-
 
 
    <GridLayout
@@ -88,7 +79,6 @@
 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:id="@+id/morazkar"
           android:layout_gravity="fill"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
@@ -96,8 +86,7 @@
           app:cardCornerRadius="8dp"
           app:cardElevation="8dp"
           android:padding="5dp"
-
-          >
+          tools:ignore="UnusedAttribute">
 
          <LinearLayout
              android:layout_width="wrap_content"
@@ -128,19 +117,16 @@
 
       </androidx.cardview.widget.CardView>
       <androidx.cardview.widget.CardView
-
-
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:id="@+id/forty"
+          android:onClick="open_masl"
           android:layout_gravity="fill"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
           android:layout_margin="8dp"
           app:cardCornerRadius="8dp"
           app:cardElevation="8dp"
-
-          >
+          tools:ignore="UnusedAttribute">
 
          <LinearLayout
              android:layout_width="wrap_content"
@@ -150,32 +136,31 @@
              android:orientation="vertical">
 
             <ImageView
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/abc_vector_test"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/masl"
+                android:scaleType="fitCenter"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="الأربعون النووية"
+                android:text="مسلكيات"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
+                android:textColor="@color/Black"
                 android:textSize="15sp"
                 android:padding="5dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
          </LinearLayout>
 
       </androidx.cardview.widget.CardView>
-
-
       <androidx.cardview.widget.CardView
 
 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:id="@+id/azkar"
           android:onClick="open_raqaq"
           android:layout_gravity="fill"
           android:layout_rowWeight="1"
@@ -216,11 +201,9 @@
 
       </androidx.cardview.widget.CardView>
       <androidx.cardview.widget.CardView
-
-
           android:layout_width="wrap_content"
-          android:layout_height="100dp"
-          android:id="@+id/qbla"
+          android:layout_height="wrap_content"
+          android:onClick="open_tawel"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
           android:layout_margin="8dp"
@@ -239,21 +222,23 @@
 
             <ImageView
 
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/abc_vector_test"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/tawel"
+                android:scaleType="fitCenter"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="القبلة"
+                android:text="التأويل الحداثي للتراث"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/Black"
                 android:textAlignment="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                tools:ignore="RtlCompat" />
          </LinearLayout>
 
       </androidx.cardview.widget.CardView>
@@ -261,15 +246,14 @@
 
           android:layout_gravity="fill"
           android:layout_width="wrap_content"
-          android:layout_height="100dp"
-          android:id="@+id/counter"
+          android:layout_height="wrap_content"
+          android:onClick="open_sulta"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
           android:layout_margin="8dp"
           app:cardCornerRadius="8dp"
           app:cardElevation="8dp"
-
-          >
+          tools:ignore="UnusedAttribute">
 
          <LinearLayout
              android:layout_width="wrap_content"
@@ -280,38 +264,37 @@
 
             <ImageView
 
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/abc_vector_test"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/salta"
+                android:scaleType="fitCenter"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="العداد"
+                android:text="سُلطة الثقافة الغالِبة"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/Black"
                 android:textAlignment="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="5dp" />
+                android:padding="5dp"
+                tools:ignore="RtlCompat" />
          </LinearLayout>
 
       </androidx.cardview.widget.CardView>
       <androidx.cardview.widget.CardView
-
-
           android:layout_width="wrap_content"
-          android:layout_height="100dp"
-          android:id="@+id/setting"
+          android:layout_height="wrap_content"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
+          android:onClick="open_mag"
           android:layout_margin="8dp"
           app:cardCornerRadius="8dp"
           app:cardElevation="8dp"
           android:layout_gravity="fill"
-
-          >
+          tools:ignore="UnusedAttribute">
 
          <LinearLayout
              android:layout_width="wrap_content"
@@ -322,21 +305,23 @@
 
             <ImageView
 
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/abc_vector_test"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/mag"
+                android:scaleType="fitCenter"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="مشاركة التطبيق"
+                android:text="الماجريات"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/Black"
                 android:textAlignment="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="5dp" />
+                android:padding="5dp"
+                tools:ignore="RtlCompat" />
          </LinearLayout>
 
       </androidx.cardview.widget.CardView>

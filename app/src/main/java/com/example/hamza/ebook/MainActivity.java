@@ -18,37 +18,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void bio(View view) {
-
         Intent intent=new Intent(getApplicationContext(),Bio.class);
+        startActivity(intent); }
+
+    public void openpdf(int requestt){
+        Intent intent =new Intent(getApplicationContext(),Read.class);
+        request=requestt;
+        intent.putExtra("EXTRA_SESSION_ID",request);
         startActivity(intent);
-
     }
 
-    public void open(View view) {
-        Intent i =new Intent(getApplicationContext(),Read.class);
-        request=1;
-        i.putExtra("EXTRA_SESSION_ID", request);
-        startActivity(i);
-
-
-
-
-    }
+    public void open(View view) { openpdf(1); }
 
     public void openway(View view) {
-        Intent i =new Intent(getApplicationContext(),Read.class);
-        request=2;
-        i.putExtra("EXTRA_SESSION_ID", request);
-        startActivity(i);
+      openpdf(2);
     }
 
     public void open_raqaq(View view) {
-        Intent i =new Intent(getApplicationContext(),Read.class);
-        request=3;
-        i.putExtra("EXTRA_SESSION_ID", request);
-        startActivity(i);
+        openpdf(3);
+    }
+
+    public void open_masl(View view) {
+        openpdf(4);
+    }
+
+    public void open_sulta(View view) {
+        openpdf(5);
+    }
+
+    public void open_tawel(View view) {
+        openpdf(6);
+    }
+
+    public void open_mag(View view) {
+        openpdf(7);
     }
 }
