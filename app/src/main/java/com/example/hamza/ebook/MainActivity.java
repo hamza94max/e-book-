@@ -18,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void bio(View view) {
+
         Intent intent=new Intent(getApplicationContext(),Bio.class);
-        startActivity(intent); }
+        startActivity(intent);
+
+    }
 
     public void openpdf(int requestt){
         Intent intent =new Intent(getApplicationContext(),Read.class);
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public void open(View view) { openpdf(1); }
 
     public void openway(View view) {
-      openpdf(2);
+        openpdf(2);
     }
 
     public void open_raqaq(View view) {

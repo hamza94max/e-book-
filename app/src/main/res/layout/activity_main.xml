@@ -19,8 +19,6 @@
           android:src="@drawable/bb"
           android:onClick="bio" />
    </androidx.cardview.widget.CardView>
-
-
    <GridLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
