@@ -80,8 +80,6 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
     public void onPageChanged(int page, int pageCount) {
         pageNumber = page;
         setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-
-
         SharedPreferences.Editor editor = getSharedPreferences("pager", MODE_PRIVATE).edit();
         editor.putInt("page", pageNumber);
         editor.apply();
