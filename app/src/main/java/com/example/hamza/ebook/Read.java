@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 
@@ -92,11 +94,17 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
                 .onPageChange(this)
                 .enableAnnotationRendering(true)
                 .load();
+
+        Toast.makeText(this, "توقفت عند "+(arrid+1), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPageChanged(int page, int pageCount) {
         SharedPreferences.Editor editor = getSharedPreferences("shared", MODE_PRIVATE).edit();
+
+        if (page==pageCount)
+            Toast.makeText(this, "انتهيت من الكتاب", Toast.LENGTH_SHORT).show();
+
         switch(BookId){
             case 1:
                 arr[0]=page;
