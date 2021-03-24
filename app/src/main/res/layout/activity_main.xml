@@ -289,6 +289,46 @@
           android:layout_height="wrap_content"
           android:layout_rowWeight="1"
           android:layout_columnWeight="1"
+          android:onClick="share"
+          android:layout_margin="8dp"
+          app:cardCornerRadius="8dp"
+          app:cardElevation="8dp"
+          android:layout_gravity="fill"
+          tools:ignore="UnusedAttribute">
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical|center_horizontal"
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:src="@drawable/ic_baseline_share_24"
+                android:scaleType="fitCenter"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مشاركة التطبيق"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                tools:ignore="RtlCompat" />
+         </LinearLayout>
+
+      </androidx.cardview.widget.CardView>
+      <androidx.cardview.widget.CardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_rowWeight="1"
+          android:layout_columnWeight="1"
           android:onClick="open_mag"
           android:layout_margin="8dp"
           app:cardCornerRadius="8dp"
@@ -325,6 +365,7 @@
          </LinearLayout>
 
       </androidx.cardview.widget.CardView>
+
 
 
 
