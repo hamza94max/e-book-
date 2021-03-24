@@ -1,9 +1,8 @@
 package com.example.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
+
 
 public class Bio extends AppCompatActivity {
 

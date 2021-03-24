@@ -1,7 +1,6 @@
 package com.example.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,10 +11,11 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
     private String pdfFileName;
     PDFView pdfView;
-    private String PDF_FILE;
+    private String assetFileName;
     int [] arr;
     int []save;
     int BookId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,28 +26,13 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
 
         arr = new int[]{0,0,0,0,0,0,0};
-        save=new int []{0,0,0,0,0,0,0};
+        save= new int []{0,0,0,0,0,0,0};
         SharedPreferences mySharedPreferences = getSharedPreferences("shared",Context.MODE_PRIVATE);
 
-        save[0] = mySharedPreferences.getInt("id1",0);
-        save[1] = mySharedPreferences.getInt("id2",0);
-        save[2] = mySharedPreferences.getInt("id3",0);
-        save[3] = mySharedPreferences.getInt("id4",0);
-        save[4] = mySharedPreferences.getInt("id5",0);
-        save[5] = mySharedPreferences.getInt("id6",0);
-        save[6] = mySharedPreferences.getInt("id7",0);
-
-        arr[0]=save[0];
-        arr[1]=save[1];
-        arr[2]=save[2];
-        arr[3]=save[3];
-        arr[4]=save[4];
-        arr[5]=save[5];
-        arr[6]=save[6];
-
-
-
-
+        for (int i=0;i<7;i++){
+            save[i]=mySharedPreferences.getInt("id"+(i+1),0);
+            arr[i]=save[i];
+        }
 
         BookId = getIntent().getIntExtra("EXTRA_SESSION_ID",0);
 
@@ -55,44 +40,44 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
             case 1:
                 pdfFileName ="مآلات الخطاب المدني";
-                PDF_FILE="malat.pdf";
-                displayFromAsset(PDF_FILE,arr[0]);
+                assetFileName ="malat.pdf";
+                displayFromAsset(assetFileName,arr[0]);
             break;
 
             case 2:
                 pdfFileName ="الطريق إلى القرآن";
-                PDF_FILE="way.pdf";
-                displayFromAsset(PDF_FILE,arr[1]);
+                assetFileName="way.pdf";
+                displayFromAsset(assetFileName,arr[1]);
             break;
 
             case 3:
                 pdfFileName ="رقائق القرآن";
-                PDF_FILE="raq.pdf";
-                displayFromAsset(PDF_FILE,arr[2]);
+                assetFileName="raq.pdf";
+                displayFromAsset(assetFileName,arr[2]);
             break;
 
             case 4:
                 pdfFileName ="مسلكيات";
-                PDF_FILE="masl.pdf";
-                displayFromAsset(PDF_FILE,arr[3]);
+                assetFileName="masl.pdf";
+                displayFromAsset(assetFileName,arr[3]);
             break;
 
             case 5:
                 pdfFileName ="سُلطة الثقافة الغالِبة";
-                PDF_FILE="sulta.pdf";
-                displayFromAsset(PDF_FILE,arr[4]);
+                assetFileName="sulta.pdf";
+                displayFromAsset(assetFileName,arr[4]);
             break;
 
             case 6:
                 pdfFileName ="التأويل الحداثي للتراث";
-                PDF_FILE="tawel.pdf";
-                displayFromAsset(PDF_FILE,arr[5]);
+                assetFileName="tawel.pdf";
+                displayFromAsset(assetFileName,arr[5]);
             break;
 
             case 7:
                 pdfFileName ="الماجريات";
-                PDF_FILE="mag.pdf";
-                displayFromAsset(PDF_FILE,arr[6]);
+                assetFileName="mag.pdf";
+                displayFromAsset(assetFileName,arr[6]);
             break;
         }
     }
@@ -100,9 +85,7 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
 
     private void displayFromAsset(String assetFileName ,int arrid) {
-        
-
-        pdfView.fromAsset(PDF_FILE)
+        pdfView.fromAsset(assetFileName)
                 .defaultPage(arrid)
                 .enableSwipe(true)
                 .swipeHorizontal(false)
@@ -158,9 +141,6 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
                 editor.putInt("id7", arr[6]);
                 editor.apply();
                 break;
-
         }
-
-
     }
 }
