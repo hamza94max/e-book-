@@ -1,15 +1,14 @@
-package com.example.hamza.ebook;
+package com.hamzaa.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.databinding.DataBindingUtil;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.github.barteksc.pdfviewer.PDFView;
+import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +17,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        ActivityMainBinding binding =DataBindingUtil.setContentView(this,R.layout.activity_main);
+
+
+
+
+
+
+
+
+
     }
 
     public void bio(View view) {

@@ -1,4 +1,4 @@
-package com.example.hamza.ebook;
+package com.hamzaa.hamza.ebook;
 
 import org.junit.Test;
 

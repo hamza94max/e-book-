@@ -1,4 +1,4 @@
-package com.example.hamza.ebook;
+package com.hamzaa.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
 

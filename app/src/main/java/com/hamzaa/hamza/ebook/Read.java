@@ -1,6 +1,8 @@
-package com.example.hamza.ebook;
+package com.hamzaa.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +10,8 @@ import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
+import com.hamzaa.hamza.ebook.databinding.ActivityReadBinding;
 
 public class Read extends AppCompatActivity implements OnPageChangeListener {
 
@@ -18,12 +22,16 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
     int []save;
     int BookId;
 
+    ActivityReadBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
 
-         pdfView = findViewById(R.id.pdfViewe);
+
+         binding = DataBindingUtil.setContentView(this,R.layout.activity_read);
+
+
 
 
 
@@ -87,7 +95,7 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
 
     private void displayFromAsset(String assetFileName ,int arrid) {
-        pdfView.fromAsset(assetFileName)
+        binding.pdfViewe.fromAsset(assetFileName)
                 .defaultPage(arrid)
                 .enableSwipe(true)
                 .swipeHorizontal(false)

@@ -1,378 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+   <data>
 
-   <RelativeLayout
+   </data>
+
+   <ScrollView
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
-   <androidx.cardview.widget.CardView
-       android:id="@+id/pic"
-       android:background="#154F7E"
-       android:layout_width="wrap_content"
        android:layout_height="wrap_content">
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:src="@drawable/bb"
-          android:onClick="bio" />
-   </androidx.cardview.widget.CardView>
-   <GridLayout
-       android:background="#154F7E"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_below="@+id/pic"
-       android:layout_gravity="center_horizontal"
-       android:layout_margin="20dp"
-       android:paddingBottom="15dp"
-       android:layoutDirection="ltr"
-       android:alignmentMode="alignMargins"
-       android:columnCount="2"
-       android:rowCount="4" >
 
 
-      <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="150dp"
-          android:id="@+id/malat"
-          android:layout_gravity="fill"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp" >
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
 
-         <LinearLayout
+         <androidx.cardview.widget.CardView
+             android:id="@+id/pic"
+             android:background="#154F7E"
              android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+             android:layout_height="wrap_content">
 
             <ImageView
-
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:onClick="openway"
-                android:src="@drawable/way"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="الطريق إلى القرآن"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:gravity="center_horizontal" />
-         </LinearLayout>
+                android:src="@drawable/bb"
+                android:onClick="bio" />
+         </androidx.cardview.widget.CardView>
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
+         <GridLayout
+             android:background="#154F7E"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/pic"
+             android:layout_gravity="center_horizontal"
+             android:layout_margin="20dp"
+             android:paddingBottom="15dp"
+             android:layoutDirection="ltr"
+             android:alignmentMode="alignMargins"
+             android:columnCount="2"
+             android:rowCount="4">
 
 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="fill"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          android:padding="5dp"
-          tools:ignore="UnusedAttribute">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/malat"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/malat_pic"
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:onClick="open"
-                android:background="@drawable/mm"
-                android:scaleType="fitCenter"/>
-            <TextView
+                  <ImageView
+
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:onClick="openway"
+                      android:src="@drawable/way"
+                      tools:ignore="VectorDrawableCompat" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="الطريق إلى القرآن"
+                      android:textSize="15sp"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      android:gravity="center_horizontal" />
+               </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="مآلات الخطاب المدني"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
                 android:padding="5dp"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                tools:ignore="UnusedAttribute">
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:onClick="open_masl"
-          android:layout_gravity="fill"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          tools:ignore="UnusedAttribute">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+                  <ImageView
+                      android:id="@+id/malat_pic"
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:onClick="open"
+                      android:background="@drawable/mm"
+                      android:scaleType="fitCenter" />
 
-            <ImageView
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:src="@drawable/masl"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="مآلات الخطاب المدني"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
 
-            <TextView
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="مسلكيات"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-                android:textColor="@color/Black"
-                android:textSize="15sp"
-                android:padding="5dp"
-                android:textStyle="bold"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                android:onClick="open_masl"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                tools:ignore="UnusedAttribute">
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:src="@drawable/masl"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="مسلكيات"
+                      android:layout_marginTop="10dp"
+                      android:textAlignment="center"
+                      android:textColor="@color/Black"
+                      android:textSize="15sp"
+                      android:padding="5dp"
+                      android:textStyle="bold"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
 
 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:onClick="open_raqaq"
-          android:layout_gravity="fill"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          tools:ignore="GridLayout">
-
-
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
-
-            <ImageView
-
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:src="@drawable/raqq"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="رقائق القرآن"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:padding="5dp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal" />
-         </LinearLayout>
+                android:onClick="open_raqaq"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                tools:ignore="GridLayout">
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:onClick="open_tawel"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          android:layout_gravity="fill"
 
-          >
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+                  <ImageView
 
-            <ImageView
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:src="@drawable/raqq"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
 
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:src="@drawable/tawel"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="رقائق القرآن"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:padding="5dp"
+                      android:textStyle="bold"
+                      android:gravity="center_horizontal" />
+               </LinearLayout>
 
-            <TextView
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="التأويل الحداثي للتراث"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:padding="5dp"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                android:onClick="open_tawel"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_gravity="fill"
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
+                >
 
-          android:layout_gravity="fill"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:onClick="open_sulta"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          tools:ignore="UnusedAttribute">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+                  <ImageView
 
-            <ImageView
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:src="@drawable/tawel"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
 
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:src="@drawable/salta"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="التأويل الحداثي للتراث"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
 
-            <TextView
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_gravity="fill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="سُلطة الثقافة الغالِبة"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:padding="5dp"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                android:onClick="open_sulta"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                tools:ignore="UnusedAttribute">
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:onClick="share"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          android:layout_gravity="fill"
-          tools:ignore="UnusedAttribute">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+                  <ImageView
 
-            <ImageView
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:src="@drawable/ic_baseline_share_24"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:src="@drawable/salta"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
 
-            <TextView
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="سُلطة الثقافة الغالِبة"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="مشاركة التطبيق"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:padding="5dp"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:onClick="share"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_gravity="fill"
+                tools:ignore="UnusedAttribute">
 
-      </androidx.cardview.widget.CardView>
-      <androidx.cardview.widget.CardView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_rowWeight="1"
-          android:layout_columnWeight="1"
-          android:onClick="open_mag"
-          android:layout_margin="8dp"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="8dp"
-          android:layout_gravity="fill"
-          tools:ignore="UnusedAttribute">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|center_horizontal"
-             android:gravity="center"
-             android:orientation="vertical">
+                  <ImageView
+                      android:layout_width="85dp"
+                      android:layout_height="85dp"
+                      android:src="@drawable/ic_baseline_share_24"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
 
-            <ImageView
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="مشاركة التطبيق"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
 
-                android:layout_width="155dp"
-                android:layout_height="155dp"
-                android:src="@drawable/mag"
-                android:scaleType="fitCenter"
-                tools:ignore="VectorDrawableCompat" />
+            </androidx.cardview.widget.CardView>
 
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="الماجريات"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/Black"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:padding="5dp"
-                tools:ignore="RtlCompat" />
-         </LinearLayout>
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:onClick="open_mag"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_gravity="fill"
+                tools:ignore="UnusedAttribute">
 
-      </androidx.cardview.widget.CardView>
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                  <ImageView
+
+                      android:layout_width="155dp"
+                      android:layout_height="155dp"
+                      android:src="@drawable/mag"
+                      android:scaleType="fitCenter"
+                      tools:ignore="VectorDrawableCompat" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="الماجريات"
+                      android:layout_marginTop="10dp"
+                      android:textColor="@color/Black"
+                      android:textAlignment="center"
+                      android:textSize="15sp"
+                      android:textStyle="bold"
+                      android:padding="5dp"
+                      tools:ignore="RtlCompat" />
+               </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
+         </GridLayout>
+      </RelativeLayout>
 
 
-   </GridLayout>
-   </RelativeLayout>
-
-
-
-
-</ScrollView>
+   </ScrollView>
+</layout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hamza.ebook">
+    package="com.hamzaa.hamza.ebook">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,15 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Splash">
+        <activity android:name="com.hamzaa.hamza.ebook.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Bio" />
-        <activity android:name=".Read"/>
+        <activity android:name="com.hamzaa.hamza.ebook.MainActivity" />
+        <activity android:name="com.hamzaa.hamza.ebook.Bio" />
+        <activity android:name="com.hamzaa.hamza.ebook.Read"/>
 
 
 
