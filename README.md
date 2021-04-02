@@ -3,7 +3,7 @@ An e-Book app for dr Ibrahem El Sakran
 
 # Tools 
 - [PDF viewer Library ](https://github.com/barteksc/AndroidPdfViewer)
-- kotlin 
+- Java
 
 # Screenshots
 
