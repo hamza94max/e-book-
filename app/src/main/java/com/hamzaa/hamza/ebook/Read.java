@@ -36,12 +36,12 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
 
         arr = new int[]{0,0,0,0,0,0,0};
-        save= new int []{0,0,0,0,0,0,0};
+        save = new int []{0,0,0,0,0,0,0};
         SharedPreferences mySharedPreferences = getSharedPreferences("shared",Context.MODE_PRIVATE);
 
         for (int i=0;i<7;i++){
-            save[i]=mySharedPreferences.getInt("id"+(i+1),0);
-            arr[i]=save[i];
+            save[i] = mySharedPreferences.getInt("id"+(i+1),0);
+            arr[i] = save[i];
         }
 
         BookId = getIntent().getIntExtra("EXTRA_SESSION_ID",0);
@@ -49,20 +49,20 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
         switch (BookId){
 
             case 1:
-                pdfFileName ="مآلات الخطاب المدني";
-                assetFileName ="malat.pdf";
+                pdfFileName = "مآلات الخطاب المدني";
+                assetFileName = "malat.pdf";
                 displayFromAsset(assetFileName,arr[0]);
             break;
 
             case 2:
-                pdfFileName ="الطريق إلى القرآن";
-                assetFileName="way.pdf";
+                pdfFileName = "الطريق إلى القرآن";
+                assetFileName= "way.pdf";
                 displayFromAsset(assetFileName,arr[1]);
             break;
 
             case 3:
-                pdfFileName ="رقائق القرآن";
-                assetFileName="raq.pdf";
+                pdfFileName ="رقائق القرآن" ;
+                assetFileName= "raq.pdf";
                 displayFromAsset(assetFileName,arr[2]);
             break;
 
