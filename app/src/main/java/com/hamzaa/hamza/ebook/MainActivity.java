@@ -1,13 +1,12 @@
 package com.hamzaa.hamza.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
+import com.github.barteksc.pdfviewer.BuildConfig;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
     }
 
     public void bio(View view) {
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         openpdf(7);
     }
 
-    public void share(View view) {
+    public void shareApp(View view) {
         try {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
