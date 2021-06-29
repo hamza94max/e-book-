@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.hamzaa.hamza.ebook.MainActivity" />
-        <activity android:name="com.hamzaa.hamza.ebook.Bio" />
         <activity android:name="com.hamzaa.hamza.ebook.Read"/>
 
 
