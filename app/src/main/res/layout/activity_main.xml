@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-   <data>
-
-   </data>
-
-   <LinearLayout
-       android:orientation="vertical"
-       android:id="@+id/container"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent" >
-
    <ScrollView
-
+       android:keepScreenOn="true"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-
-
+       android:layout_height="match_parent"
+       tools:ignore="UselessParent">
       <RelativeLayout
           android:layout_width="match_parent"
-          android:layout_height="match_parent">
+          android:layout_height="match_parent"
+          tools:ignore="ScrollViewSize">
 
          <androidx.cardview.widget.CardView
              android:id="@+id/pic"
+
              android:background="#154F7E"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:onClick="bio">
 
             <ImageView
+                android:onClick="OpenBio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/bb" />
@@ -232,7 +226,6 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
                 android:layout_gravity="fill"
-
                 >
 
                <LinearLayout
@@ -389,11 +382,8 @@
                       tools:ignore="RtlCompat" />
                </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-
+                    </androidx.cardview.widget.CardView>
                 </GridLayout>
             </RelativeLayout>
          </ScrollView>
-      </LinearLayout>
-   </layout>
+</LinearLayout>

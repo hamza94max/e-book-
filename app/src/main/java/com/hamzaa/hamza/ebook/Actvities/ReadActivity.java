@@ -1,38 +1,35 @@
-package com.hamzaa.hamza.ebook;
+package com.hamzaa.hamza.ebook.Actvities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.hamzaa.hamza.ebook.databinding.ActivityReadBinding;
+import com.hamzaa.hamza.ebook.R;
 
-public class Read extends AppCompatActivity implements OnPageChangeListener {
+public class ReadActivity extends AppCompatActivity implements OnPageChangeListener {
 
-    private String pdfFileName;
-    private String assetFileName;
-    int [] arr;
-    int [] save;
-    int BookId;
+    private String pdfFileName ;
+    private String assetFileName ;
+    int [] arr ;
+    int [] save ;
+    int BookId ;
+    PDFView pdfView ;
 
-    ActivityReadBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
 
 
-         binding = DataBindingUtil.setContentView(this,R.layout.activity_read);
+        pdfView = findViewById(R.id.pdfViewer);
+        arr = new int[] {0,0,0,0,0,0,0} ;
+        save = new int [] {0,0,0,0,0,0,0} ;
 
-
-
-
-
-        arr = new int[] {0,0,0,0,0,0,0};
-        save = new int [] {0,0,0,0,0,0,0};
         SharedPreferences mySharedPreferences = getSharedPreferences("shared",Context.MODE_PRIVATE);
 
         for (int i=0;i<7;i++){
@@ -91,7 +88,7 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
 
 
     private void displayFromAsset(String assetFileName ,int arrid) {
-        binding.pdfViewe.fromAsset(assetFileName)
+        pdfView.fromAsset(assetFileName)
                 .defaultPage(arrid)
                 .enableSwipe(true)
                 .swipeHorizontal(false)
@@ -99,7 +96,7 @@ public class Read extends AppCompatActivity implements OnPageChangeListener {
                 .enableAnnotationRendering(true)
                 .load();
 
-        Toast.makeText(this, "توقفت عند "+(arrid+1), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "توقفت عند "+ ( arrid + 1 ) , Toast.LENGTH_SHORT).show();
     }
 
     @Override

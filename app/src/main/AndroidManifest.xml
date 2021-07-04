@@ -12,18 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.hamzaa.hamza.ebook.SplashScreen">
+        <activity android:name=".Actvities.BioActivity"></activity>
+        <activity android:name=".Actvities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.hamzaa.hamza.ebook.MainActivity" />
-        <activity android:name="com.hamzaa.hamza.ebook.Read"/>
-
-
-
+        <activity android:name=".Actvities.MainActivity" />
+        <activity android:name=".Actvities.ReadActivity" />
     </application>
 
 </manifest>

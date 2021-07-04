@@ -1,35 +1,34 @@
-package com.hamzaa.hamza.ebook;
+package com.hamzaa.hamza.ebook.Actvities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.BuildConfig;
+import com.hamzaa.hamza.ebook.R;
 
 public class MainActivity extends AppCompatActivity {
 
     int request ;
     
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void bio(View view) {
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.container , new BioFragment()).addToBackStack(null).commit();
-
+    public void OpenBio(View view) {
+        Intent i = new Intent(getApplicationContext() , BioActivity.class);
+        startActivity(i);
     }
 
     public void openpdf(int requestt){
-        Intent intent = new Intent(getApplicationContext(),Read.class);
+        Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
         request = requestt;
         intent.putExtra("EXTRA_SESSION_ID",request);
         startActivity(intent);
@@ -69,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
         } catch(Exception e) {
-            Toast.makeText(getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT);
+            Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT);
         }
     }
+
+
 }
