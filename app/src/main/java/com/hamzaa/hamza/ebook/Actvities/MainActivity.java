@@ -1,31 +1,40 @@
 package com.hamzaa.hamza.ebook.Actvities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.BuildConfig;
+import com.hamzaa.hamza.ebook.Fragment.BioFragment;
 import com.hamzaa.hamza.ebook.R;
+import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     int request ;
-    
+    ActivityMainBinding binding;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+
     }
 
-    public void OpenBio(View view) {
-        Intent i = new Intent(getApplicationContext() , BioActivity.class);
-        startActivity(i);
+    /*public void OpenBio(View view) {
+        openFragmentFull();
     }
+
+    void openFragmentFull() {
+        getSupportFragmentManager().beginTransaction().add(R.id.container,new BioFragment()).commit();
+    }*/
 
     public void openpdf(int requestt){
         Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
@@ -71,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT);
         }
     }
+
 
 
 }
