@@ -20,8 +20,20 @@
 كما أجرى السكران العديد من البحوث عن تنظيم الدولة ومن أبرزها "مكتسبات أهل السنة والجماعة" و"منزلة المجاهدين عند تنظيم الدولة" و"قتل الأهل والأقارب عند تنظيم الدولة" و"رسالة إلى المنتسب لتنظيم الدولة".
 
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    // Books name
+    <string name="wayToquranBook"> الطريق إلى القرآن</string>
+    <string name="openbio"> OpenBio </string>
+    <string name="MalatBook">مآلات الخطاب المدني </string>
+    <string name="MaslakeatBook">مسلكيات </string>
+    <string name="RaqaqBook">رقائق القرآن</string>
+    <string name="TawelBook">التأويل الحداثي للتراث</string>
+    <string name="SoltaBook">سُلطة الثقافة الغالِبة </string>
+    <string name="ShareApp">مشاركة التطبيق</string>
+    <string name="MagariatBook">الماجريات</string>
+    <string name="finishBook">انتهيت من الكتاب</string>
 
 </resources>

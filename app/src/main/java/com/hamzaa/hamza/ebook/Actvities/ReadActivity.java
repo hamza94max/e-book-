@@ -1,12 +1,12 @@
 package com.hamzaa.hamza.ebook.Actvities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.hamzaa.hamza.ebook.R;
@@ -14,10 +14,10 @@ import com.hamzaa.hamza.ebook.databinding.ActivityReadBinding;
 
 public class ReadActivity extends AppCompatActivity implements OnPageChangeListener {
 
-    private String pdfFileName ;
-    int [] Booksarray ;
-    int [] LastOpenedPagearray ;
-    int BookId ;
+    String pdfFileName, assetFileName;
+    int[] Booksarray, LastOpenedPagearray;
+    String[] assetFilesName, pdfFileNames, BooksId;
+    int BookId;
 
     ActivityReadBinding binding;
 
@@ -26,69 +26,65 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
 
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_read);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_read);
 
-        Booksarray = new int[] {0,0,0,0,0,0,0} ;
-        LastOpenedPagearray = new int [] {0,0,0,0,0,0,0} ;
+        Booksarray = new int[7];
+        LastOpenedPagearray = new int[7];
 
-        SharedPreferences mySharedPreferences = getSharedPreferences("shared",Context.MODE_PRIVATE);
+        assetFilesName = new String[]{"malat.pdf", "way.pdf", "raq.pdf", "masl.pdf", "sulta.pdf", "tawel.pdf", "mag.pdf"};
 
-        for (int i=0;i<7;i++){
-            LastOpenedPagearray[i] = mySharedPreferences.getInt("id"+(i+1),0);
+        pdfFileNames = new String[]{getString(R.string.MalatBook), getString(R.string.wayToquranBook),
+                getString(R.string.RaqaqBook), getString(R.string.MaslakeatBook), getString(R.string.SoltaBook),
+                getString(R.string.TawelBook), getString(R.string.MagariatBook)};
+
+        BooksId = new String[]{"id1", "id2", "id3", "id4", "id5", "id6", "id7"};
+
+        SharedPreferences mySharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        for (int i = 0; i < 7; i++) {
+            LastOpenedPagearray[i] = mySharedPreferences.getInt("id" + (i + 1), 0);
             Booksarray[i] = LastOpenedPagearray[i];
         }
 
-        BookId = getIntent().getIntExtra("EXTRA_SESSION_ID",0);
+        BookId = getIntent().getIntExtra("EXTRA_SESSION_ID", 0);
 
-        switch (BookId){
-
+        switch (BookId) {
             case 1:
-                pdfFileName = "مآلات الخطاب المدني";
-                String assetFileName = "malat.pdf";
-                displayFromAsset(assetFileName,Booksarray[0]);
-            break;
+                putBookdetails(1);
+                break;
 
             case 2:
-                pdfFileName = "الطريق إلى القرآن";
-                assetFileName = "way.pdf";
-                displayFromAsset(assetFileName,Booksarray[1]);
-            break;
+                putBookdetails(2);
+                break;
 
             case 3:
-                pdfFileName = "رقائق القرآن"  ;
-                assetFileName = "raq.pdf";
-                displayFromAsset(assetFileName,Booksarray[2]);
-            break;
+                putBookdetails(3);
+                break;
 
             case 4:
-                pdfFileName ="مسلكيات";
-                assetFileName = "masl.pdf";
-                displayFromAsset(assetFileName,Booksarray[3]);
+                putBookdetails(4);
             break;
 
             case 5:
-                pdfFileName = "سُلطة الثقافة الغالِبة";
-                assetFileName = "sulta.pdf";
-                displayFromAsset(assetFileName,Booksarray[4]);
+                putBookdetails(5);
             break;
 
             case 6:
-                pdfFileName = "التأويل الحداثي للتراث" ;
-                assetFileName = "tawel.pdf";
-                displayFromAsset(assetFileName,Booksarray[5]);
-            break;
+                putBookdetails(6);
+                break;
 
             case 7:
-                pdfFileName = "الماجريات";
-                assetFileName = "mag.pdf";
-                displayFromAsset(assetFileName,Booksarray[6]);
-            break;
+                putBookdetails(7);
+                break;
         }
     }
 
+    private void putBookdetails(int i) {
+        pdfFileName = pdfFileNames[i - 1];
+        assetFileName = assetFilesName[i - 1];
+        displayFromAsset(assetFileName, Booksarray[i - 1]);
+    }
 
-
-    private void displayFromAsset(String assetFileName ,int arrid) {
+    private void displayFromAsset(String assetFileName, int arrid) {
         binding.pdfViewer.fromAsset(assetFileName)
                 .defaultPage(arrid)
                 .enableSwipe(true)
@@ -97,60 +93,45 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
                 .enableAnnotationRendering(true)
                 .load();
 
-        Toast.makeText(this, "توقفت عند "+ ( arrid + 1 ) , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, " توقفت عند " + (arrid + 1), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onPageChanged(int page, int pageCount) {
         SharedPreferences.Editor editor = getSharedPreferences("shared", MODE_PRIVATE).edit();
 
-        if (page==pageCount)
-            Toast.makeText(this, "انتهيت من الكتاب", Toast.LENGTH_SHORT).show();
+        if (page == pageCount)
+            Toast.makeText(this, getString(R.string.finishBook), Toast.LENGTH_SHORT).show();
 
-        switch(BookId){
+        switch (BookId) {
             case 1:
-                Booksarray[0] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id1", Booksarray[0]);
-                editor.apply();
+                putLastOpenedpage(1, editor, page, pageCount);
                 break;
-
             case 2:
-                Booksarray[1] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id2", Booksarray[1]);
-                editor.apply();
+                putLastOpenedpage(2, editor, page, pageCount);
                 break;
             case 3:
-                Booksarray[2] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id3", Booksarray[2]);
-                editor.apply();
+                putLastOpenedpage(3, editor, page, pageCount);
                 break;
             case 4:
-                Booksarray[3] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id4", Booksarray[3]);
-                editor.apply();
+                putLastOpenedpage(4, editor, page, pageCount);
                 break;
             case 5:
-                Booksarray[4] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id5", Booksarray[4]);
-                editor.apply();
+                putLastOpenedpage(5, editor, page, pageCount);
                 break;
             case 6:
-                Booksarray[5] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id6", Booksarray[5]);
-                editor.apply();
+                putLastOpenedpage(6, editor, page, pageCount);
                 break;
             case 7:
-                Booksarray[6] = page;
-                setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-                editor.putInt("id7", Booksarray[6]);
-                editor.apply();
+                putLastOpenedpage(7, editor, page, pageCount);
                 break;
         }
+    }
+
+    private void putLastOpenedpage(int i, SharedPreferences.Editor editor, int currentpage, int BookpagesCount) {
+        Booksarray[i - 1] = currentpage;
+        setTitle(String.format("%s %s / %s", pdfFileName, currentpage + 1, BookpagesCount));
+        editor.putInt(BooksId[i], Booksarray[i - 1]);
+        editor.apply();
     }
 }
