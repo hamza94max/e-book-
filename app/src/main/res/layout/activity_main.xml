@@ -26,17 +26,17 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/pic"
-
                 android:background="#154F7E"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="bio">
+                android:onClick="OpenBio"
+                tools:ignore="UsingOnClickInXml">
 
                <ImageView
-                   android:onClick="OpenBio"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:src="@drawable/bb" />
+                   android:src="@drawable/bb"
+                   android:contentDescription="@string/openbio" />
 
             </androidx.cardview.widget.CardView>
 
@@ -51,39 +51,42 @@
                 android:layoutDirection="ltr"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
-                android:rowCount="4">
-
+                android:rowCount="4"
+                tools:ignore="UnusedAttribute">
 
                <androidx.cardview.widget.CardView
                    android:layout_width="wrap_content"
                    android:layout_height="150dp"
                    android:id="@+id/malat"
+                   android:onClick="openwayToquranBook"
                    android:layout_gravity="fill"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
-                   app:cardElevation="8dp">
+                   app:cardElevation="8dp"
+                   tools:ignore="UnusedAttribute,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_vertical|center_horizontal"
                       android:gravity="center"
-                      android:orientation="vertical">
+                      android:orientation="vertical"
+                      tools:ignore="UseCompoundDrawables">
 
                      <ImageView
-
                          android:layout_width="155dp"
                          android:layout_height="155dp"
-                         android:onClick="openway"
+                         android:onClick="openwayToquranBook"
                          android:src="@drawable/way"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="UsingOnClickInXml,VectorDrawableCompat"
+                         android:contentDescription="@string/wayToquranBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="الطريق إلى القرآن"
+                         android:text="@string/wayToquranBook"
                          android:textSize="15sp"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
@@ -96,8 +99,6 @@
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
-
-
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_gravity="fill"
@@ -114,20 +115,22 @@
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_vertical|center_horizontal"
                       android:gravity="center"
-                      android:orientation="vertical">
+                      android:onClick="openMalatBook"
+                      android:orientation="vertical"
+                      tools:ignore="UsingOnClickInXml">
 
                      <ImageView
                          android:id="@+id/malat_pic"
                          android:layout_width="155dp"
                          android:layout_height="155dp"
-                         android:onClick="open"
                          android:background="@drawable/mm"
-                         android:scaleType="fitCenter" />
+                         android:scaleType="fitCenter"
+                         android:contentDescription="@string/MalatBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="مآلات الخطاب المدني"
+                         android:text="@string/MalatBook"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -135,6 +138,7 @@
                          android:textStyle="bold"
                          android:padding="5dp"
                          tools:ignore="RtlCompat" />
+
                   </LinearLayout>
 
                </androidx.cardview.widget.CardView>
@@ -142,14 +146,14 @@
                <androidx.cardview.widget.CardView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:onClick="open_masl"
+                   android:onClick="openMaslakeatBook"
                    android:layout_gravity="fill"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
-                   tools:ignore="UnusedAttribute">
+                   tools:ignore="UnusedAttribute,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -163,12 +167,13 @@
                          android:layout_height="155dp"
                          android:src="@drawable/masl"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/MaslakeatBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="مسلكيات"
+                         android:text="@string/MaslakeatBook"
                          android:layout_marginTop="10dp"
                          android:textAlignment="center"
                          android:textColor="@color/Black"
@@ -176,24 +181,21 @@
                          android:padding="5dp"
                          android:textStyle="bold"
                          tools:ignore="RtlCompat" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
-
-
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:onClick="open_raqaq"
+                   android:onClick="openRaqaqBook"
                    android:layout_gravity="fill"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
-                   tools:ignore="GridLayout">
-
+                   tools:ignore="GridLayout,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -203,17 +205,17 @@
                       android:orientation="vertical">
 
                      <ImageView
-
                          android:layout_width="155dp"
                          android:layout_height="155dp"
                          android:src="@drawable/raqq"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/RaqaqBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="رقائق القرآن"
+                         android:text="@string/RaqaqBook"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -221,20 +223,21 @@
                          android:padding="5dp"
                          android:textStyle="bold"
                          android:gravity="center_horizontal" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:onClick="open_tawel"
+                   android:onClick="openTawelBook"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
-                   android:layout_gravity="fill">
+                   android:layout_gravity="fill"
+                   tools:ignore="UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -244,17 +247,17 @@
                       android:orientation="vertical">
 
                      <ImageView
-
                          android:layout_width="155dp"
                          android:layout_height="155dp"
                          android:src="@drawable/tawel"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/TawelBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="التأويل الحداثي للتراث"
+                         android:text="@string/TawelBook"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -262,22 +265,21 @@
                          android:textStyle="bold"
                          android:padding="5dp"
                          tools:ignore="RtlCompat" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
-
                    android:layout_gravity="fill"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:onClick="open_sulta"
+                   android:onClick="openSultaBook"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
-                   tools:ignore="UnusedAttribute">
+                   tools:ignore="UnusedAttribute,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -287,17 +289,17 @@
                       android:orientation="vertical">
 
                      <ImageView
-
                          android:layout_width="155dp"
                          android:layout_height="155dp"
                          android:src="@drawable/salta"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/SoltaBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="سُلطة الثقافة الغالِبة"
+                         android:text="@string/SoltaBook"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -305,8 +307,8 @@
                          android:textStyle="bold"
                          android:padding="5dp"
                          tools:ignore="RtlCompat" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
@@ -319,7 +321,7 @@
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
                    android:layout_gravity="fill"
-                   tools:ignore="UnusedAttribute">
+                   tools:ignore="UnusedAttribute,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -333,12 +335,13 @@
                          android:layout_height="85dp"
                          android:src="@drawable/ic_baseline_share_24"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/ShareApp" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="مشاركة التطبيق"
+                         android:text="@string/ShareApp"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -346,8 +349,8 @@
                          android:textStyle="bold"
                          android:padding="5dp"
                          tools:ignore="RtlCompat" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
@@ -355,12 +358,12 @@
                    android:layout_height="wrap_content"
                    android:layout_rowWeight="1"
                    android:layout_columnWeight="1"
-                   android:onClick="open_mag"
+                   android:onClick="openMagariatBook"
                    android:layout_margin="8dp"
                    app:cardCornerRadius="8dp"
                    app:cardElevation="8dp"
                    android:layout_gravity="fill"
-                   tools:ignore="UnusedAttribute">
+                   tools:ignore="UnusedAttribute,UsingOnClickInXml">
 
                   <LinearLayout
                       android:layout_width="wrap_content"
@@ -370,17 +373,17 @@
                       android:orientation="vertical">
 
                      <ImageView
-
                          android:layout_width="155dp"
                          android:layout_height="155dp"
                          android:src="@drawable/mag"
                          android:scaleType="fitCenter"
-                         tools:ignore="VectorDrawableCompat" />
+                         tools:ignore="VectorDrawableCompat"
+                         android:contentDescription="@string/MagariatBook" />
 
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="الماجريات"
+                         android:text="@string/MagariatBook"
                          android:layout_marginTop="10dp"
                          android:textColor="@color/Black"
                          android:textAlignment="center"
@@ -388,8 +391,8 @@
                          android:textStyle="bold"
                          android:padding="5dp"
                          tools:ignore="RtlCompat" />
-                  </LinearLayout>
 
+                  </LinearLayout>
                </androidx.cardview.widget.CardView>
             </GridLayout>
          </RelativeLayout>

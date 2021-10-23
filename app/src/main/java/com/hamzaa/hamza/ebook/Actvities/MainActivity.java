@@ -9,11 +9,18 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.BuildConfig;
-import com.hamzaa.hamza.ebook.Fragment.BioFragment;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.OnCompleteListener;
+import com.google.android.play.core.tasks.Task;
 import com.hamzaa.hamza.ebook.R;
 import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
+    ReviewManager reviewManager;
+    ReviewInfo reviewInfo = null;
 
     int request ;
     ActivityMainBinding binding;
@@ -25,16 +32,44 @@ public class MainActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        /*addReview();
+        startReviewFlow();*/
 
     }
 
-    /*public void OpenBio(View view) {
-        openFragmentFull();
+    @SuppressWarnings("LambdaCanBeReplacedWithAnonymous")
+    public void addReview(){
+        reviewManager = ReviewManagerFactory.create(getApplicationContext());
+        Task<ReviewInfo> manager = reviewManager.requestReviewFlow();
+        manager.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                reviewInfo = task.getResult();
+            } else {
+                Toast.makeText(getApplicationContext(), "In App ReviewFlow failed to start", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
-    void openFragmentFull() {
-        getSupportFragmentManager().beginTransaction().add(R.id.container,new BioFragment()).commit();
-    }*/
+    public void startReviewFlow() {
+        if (reviewInfo != null) {
+            Task<Void> flow = reviewManager.launchReviewFlow(this, reviewInfo);
+            flow.addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(Task<Void> task) {
+                    Toast.makeText(getApplicationContext(), "In App Rating complete", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "In App Rating failed", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void OpenBio(View view) {
+        Intent intent = new Intent(getApplicationContext(),BioActivity.class);
+        startActivity(intent);
+    }
 
     public void openpdf(int requestt){
         Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
@@ -43,29 +78,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void open(View view) { openpdf(1); }
+    public void openMalatBook(View view) { openpdf(1); }
 
-    public void openway(View view) {
+    public void openwayToquranBook(View view) {
         openpdf(2);
     }
 
-    public void open_raqaq(View view) {
+    public void openRaqaqBook(View view) {
         openpdf(3);
     }
 
-    public void open_masl(View view) {
+    public void openMaslakeatBook(View view) {
         openpdf(4);
     }
 
-    public void open_sulta(View view) {
+    public void openSultaBook(View view) {
         openpdf(5);
     }
 
-    public void open_tawel(View view) {
+    public void openTawelBook(View view) {
         openpdf(6);
     }
 
-    public void open_mag(View view) {
+    public void openMagariatBook(View view) {
         openpdf(7);
     }
 
@@ -77,10 +112,8 @@ public class MainActivity extends AppCompatActivity {
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
         } catch(Exception e) {
-            Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT);
+            Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
 }
