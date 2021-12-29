@@ -1,8 +1,10 @@
-package com.hamzaa.hamza.ebook.Actvities;
+package com.ibrahem.hamza.ebook.Actvities;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.hamzaa.hamza.ebook.R;
+
+import ibrahem.hamza.ebook.R;
 
 public class BioActivity extends AppCompatActivity {
 

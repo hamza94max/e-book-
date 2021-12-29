@@ -1,12 +1,12 @@
-package com.hamzaa.hamza.ebook.Actvities;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+package com.ibrahem.hamza.ebook.Actvities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.github.barteksc.pdfviewer.BuildConfig;
 import com.google.android.play.core.review.ReviewInfo;
@@ -14,8 +14,9 @@ import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.Task;
-import com.hamzaa.hamza.ebook.R;
-import com.hamzaa.hamza.ebook.databinding.ActivityMainBinding;
+
+import ibrahem.hamza.ebook.R;
+import ibrahem.hamza.ebook.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -115,5 +116,4 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

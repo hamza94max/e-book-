@@ -1,4 +1,4 @@
-package com.hamzaa.hamza.ebook.Actvities;
+package com.ibrahem.hamza.ebook.Actvities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,8 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.hamzaa.hamza.ebook.R;
-import com.hamzaa.hamza.ebook.databinding.ActivityReadBinding;
+import com.ibrahem.hamza.ebook.DataSets.PdfFiles;
+
+import ibrahem.hamza.ebook.R;
+import ibrahem.hamza.ebook.databinding.ActivityReadBinding;
+
 
 public class ReadActivity extends AppCompatActivity implements OnPageChangeListener {
 
@@ -19,9 +22,9 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
     String[] assetFilesName, pdfFileNames;
     int BookId;
 
-
     ActivityReadBinding binding;
 
+    SharedPreferences LastopenedpageSharedpreference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +35,16 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
         Defaultpagearray = new int[]{0, 0, 0, 0, 0, 0, 0};
         LastOpenedPagearray = new int[]{0, 0, 0, 0, 0, 0, 0};
 
-
-        assetFilesName = new String[]{"malat.pdf", "way.pdf", "raq.pdf", "masl.pdf", "sulta.pdf", "tawel.pdf", "mag.pdf"};
+        assetFilesName = new String[]{PdfFiles.MalatPdf.toString(), PdfFiles.WaytoQuranPdf.toString(), PdfFiles.RaqaqPdf.toString(), PdfFiles.MaslakeatPdf.toString(), PdfFiles.SultaPdf.toString(), PdfFiles.TwaelPdf.toString(), PdfFiles.MagraiatPdf.toString()};
 
         pdfFileNames = new String[]{getString(R.string.MalatBook), getString(R.string.wayToquranBook),
                 getString(R.string.RaqaqBook), getString(R.string.MaslakeatBook), getString(R.string.SoltaBook),
                 getString(R.string.TawelBook), getString(R.string.MagariatBook)};
 
 
-        SharedPreferences mySharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        LastopenedpageSharedpreference = getSharedPreferences("shared", Context.MODE_PRIVATE);
 
-        for (int i = 0; i < 7; i++) {
-            LastOpenedPagearray[i] = mySharedPreferences.getInt("id" + (i + 1), 0);
-            Defaultpagearray[i] = LastOpenedPagearray[i];
-        }
+        getLastopenedpageforAllBooks();
 
         BookId = getIntent().getIntExtra("EXTRA_SESSION_ID", 0);
 
@@ -81,6 +80,14 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
         }
     }
 
+    private void getLastopenedpageforAllBooks() {
+        for (int i = 0; i < 7; i++) {
+            LastOpenedPagearray[i] = LastopenedpageSharedpreference.getInt("id" + (i + 1), 0);
+            Defaultpagearray[i] = LastOpenedPagearray[i];
+        }
+    }
+
+
     private void putBookdetails(int i) {
         pdfFileName = pdfFileNames[i - 1];
         assetFileName = assetFilesName[i - 1];
@@ -108,37 +115,36 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
 
         switch (BookId) {
             case 1:
-                putLastOpenedpage(1, editor, page, pageCount);
+                putLastOpenedpageForBook(1, editor, page, pageCount);
                 break;
 
             case 2:
-                putLastOpenedpage(2, editor, page, pageCount);
+                putLastOpenedpageForBook(2, editor, page, pageCount);
                 break;
 
             case 3:
-                putLastOpenedpage(3, editor, page, pageCount);
+                putLastOpenedpageForBook(3, editor, page, pageCount);
                 break;
 
             case 4:
-                putLastOpenedpage(4, editor, page, pageCount);
+                putLastOpenedpageForBook(4, editor, page, pageCount);
                 break;
 
             case 5:
-                putLastOpenedpage(5, editor, page, pageCount);
+                putLastOpenedpageForBook(5, editor, page, pageCount);
                 break;
 
             case 6:
-                putLastOpenedpage(6, editor, page, pageCount);
+                putLastOpenedpageForBook(6, editor, page, pageCount);
                 break;
 
             case 7:
-                putLastOpenedpage(7, editor, page, pageCount);
+                putLastOpenedpageForBook(7, editor, page, pageCount);
                 break;
         }
     }
 
-
-    private void putLastOpenedpage(int i, SharedPreferences.Editor editor, int currentpage, int BookpagesCount) {
+    private void putLastOpenedpageForBook(int i, SharedPreferences.Editor editor, int currentpage, int BookpagesCount) {
         Defaultpagearray[i - 1] = currentpage;
         setTitle(String.format("%s %s / %s", pdfFileName, currentpage + 1, BookpagesCount));
         editor.putInt("id" + i, Defaultpagearray[i - 1]);
