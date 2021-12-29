@@ -5,11 +5,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.hamzaa.hamza.ebook"
+        applicationId "com.ibrahem.hamza.ebook"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 2
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
