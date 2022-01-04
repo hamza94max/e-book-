@@ -14,6 +14,7 @@ import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.Task;
+import com.ibrahem.hamza.ebook.Actvities.ReadActivity.ReadActivity;
 
 import ibrahem.hamza.ebook.R;
 import ibrahem.hamza.ebook.databinding.ActivityMainBinding;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         /*addReview();
         startReviewFlow();*/
-
     }
 
     @SuppressWarnings("LambdaCanBeReplacedWithAnonymous")
@@ -72,13 +72,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openpdf(int requestt){
-        Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
-        request = requestt;
-        intent.putExtra("EXTRA_SESSION_ID",request);
-        startActivity(intent);
-    }
-
     public void openMalatBook(View view) { openpdf(1); }
 
     public void openwayToquranBook(View view) {
@@ -105,15 +98,22 @@ public class MainActivity extends AppCompatActivity {
         openpdf(7);
     }
 
+    public void openpdf(int requestt) {
+        Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
+        request = requestt;
+        intent.putExtra("EXTRA_SESSION_ID", request);
+        startActivity(intent);
+    }
+
     public void shareApp(View view) {
         try {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain").putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-            String shareMessage = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            String shareMessage = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
-        } catch(Exception e) {
-            Toast.makeText( getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getBaseContext(), "خلل في مشاركة التطبيق، المرجو الإعادة", Toast.LENGTH_SHORT).show();
         }
     }
 }

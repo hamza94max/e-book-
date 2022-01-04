@@ -1,15 +1,17 @@
-package com.hamzaa.hamza.ebook.Actvities;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.ibrahem.hamza.ebook.Actvities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 
-import com.hamzaa.hamza.ebook.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import ibrahem.hamza.ebook.R;
+import ibrahem.hamza.ebook.databinding.ActivitySplashBinding;
+
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -18,10 +20,11 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ImageView SplashImage = findViewById(R.id.img);
+        ActivitySplashBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
+
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.splashtransition);
 
-        SplashImage.startAnimation(animation);
+        binding.SplashImage.startAnimation(animation);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -31,8 +34,6 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         }, 1250);
-
-
 
     }
 }

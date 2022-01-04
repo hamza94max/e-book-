@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.DataSets;
+package com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations;
 
 
 import androidx.annotation.NonNull;
@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 public enum PdfFiles {
 
     MagraiatPdf, MaslakeatPdf, SultaPdf, RaqaqPdf, WaytoQuranPdf, TwaelPdf, MalatPdf;
-
 
     @NonNull
     @Override

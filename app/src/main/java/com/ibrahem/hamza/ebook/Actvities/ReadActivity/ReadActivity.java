@@ -1,4 +1,6 @@
-package com.ibrahem.hamza.ebook.Actvities;
+package com.ibrahem.hamza.ebook.Actvities.ReadActivity;
+
+import static com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations.BookDisplay.displayFromAsset;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.ibrahem.hamza.ebook.DataSets.PdfFiles;
+import com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations.PdfFiles;
+import com.ibrahem.hamza.ebook.Actvities.ReadActivity.Model.BookModel;
 
 import ibrahem.hamza.ebook.R;
 import ibrahem.hamza.ebook.databinding.ActivityReadBinding;
-
 
 public class ReadActivity extends AppCompatActivity implements OnPageChangeListener {
 
@@ -37,9 +39,7 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
 
         assetFilesName = new String[]{PdfFiles.MalatPdf.toString(), PdfFiles.WaytoQuranPdf.toString(), PdfFiles.RaqaqPdf.toString(), PdfFiles.MaslakeatPdf.toString(), PdfFiles.SultaPdf.toString(), PdfFiles.TwaelPdf.toString(), PdfFiles.MagraiatPdf.toString()};
 
-        pdfFileNames = new String[]{getString(R.string.MalatBook), getString(R.string.wayToquranBook),
-                getString(R.string.RaqaqBook), getString(R.string.MaslakeatBook), getString(R.string.SoltaBook),
-                getString(R.string.TawelBook), getString(R.string.MagariatBook)};
+        putBooksname();
 
 
         LastopenedpageSharedpreference = getSharedPreferences("shared", Context.MODE_PRIVATE);
@@ -48,8 +48,27 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
 
         BookId = getIntent().getIntExtra("EXTRA_SESSION_ID", 0);
 
-        switch (BookId) {
+        openBook(BookId);
 
+
+    }
+
+    private void putBooksname() {
+        pdfFileNames = new String[]{getString(R.string.MalatBook), getString(R.string.wayToquranBook),
+                getString(R.string.RaqaqBook), getString(R.string.MaslakeatBook), getString(R.string.SoltaBook),
+                getString(R.string.TawelBook), getString(R.string.MagariatBook)};
+    }
+
+    private void getLastopenedpageforAllBooks() {
+        for (int i = 0; i < 7; i++) {
+            LastOpenedPagearray[i] = LastopenedpageSharedpreference.getInt("id" + (i + 1), 0);
+            Defaultpagearray[i] = LastOpenedPagearray[i];
+        }
+    }
+
+    private void openBook(int bookId) {
+        switch (bookId) {
+            //1 -> putBookdetails(1);
             case 1:
                 putBookdetails(1);
                 break;
@@ -77,34 +96,20 @@ public class ReadActivity extends AppCompatActivity implements OnPageChangeListe
             case 7:
                 putBookdetails(7);
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + BookId);
         }
     }
-
-    private void getLastopenedpageforAllBooks() {
-        for (int i = 0; i < 7; i++) {
-            LastOpenedPagearray[i] = LastopenedpageSharedpreference.getInt("id" + (i + 1), 0);
-            Defaultpagearray[i] = LastOpenedPagearray[i];
-        }
-    }
-
 
     private void putBookdetails(int i) {
         pdfFileName = pdfFileNames[i - 1];
         assetFileName = assetFilesName[i - 1];
-        displayFromAsset(assetFileName, LastOpenedPagearray[i - 1]);
+        BookModel book = new BookModel(assetFileName, LastOpenedPagearray[i - 1]);
+        displayFromAsset(book, binding);
+        Toast.makeText(this, " توقفت عند " + (book.getLastopenedpage() + 1), Toast.LENGTH_LONG).show();
     }
 
-    private void displayFromAsset(String assetFileName, int page) {
-        binding.pdfViewer.fromAsset(assetFileName)
-                .defaultPage(page)
-                .enableSwipe(true)
-                .swipeHorizontal(false)
-                .onPageChange(this)
-                .enableAnnotationRendering(true)
-                .load();
 
-        Toast.makeText(this, " توقفت عند " + (page + 1), Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public void onPageChanged(int page, int pageCount) {
