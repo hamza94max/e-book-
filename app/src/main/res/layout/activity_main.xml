@@ -7,44 +7,36 @@
 
    </data>
 
-   <LinearLayout
+   <androidx.constraintlayout.widget.ConstraintLayout
        android:id="@+id/main"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        tools:ignore="ExtraText">
 
-      <ScrollView
-          android:keepScreenOn="true"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          tools:ignore="UselessParent">
+       <ScrollView
+           android:keepScreenOn="true"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           tools:ignore="UselessParent">
 
          <RelativeLayout
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:ignore="ScrollViewSize">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/pic"
-                android:background="#154F7E"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OpenBio"
-                tools:ignore="UsingOnClickInXml">
-
                <ImageView
+                   android:id="@+id/bioimg"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:onClick="OpenBio"
                    android:src="@drawable/bb"
                    android:contentDescription="@string/openbio" />
-
-            </androidx.cardview.widget.CardView>
 
             <GridLayout
                 android:background="#154F7E"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/pic"
+                android:layout_below="@+id/bioimg"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:paddingBottom="15dp"
@@ -370,6 +362,7 @@
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_vertical|center_horizontal"
                       android:gravity="center"
+                      android:onClick="openMagariatBook"
                       android:orientation="vertical">
 
                      <ImageView
@@ -396,6 +389,6 @@
                </androidx.cardview.widget.CardView>
             </GridLayout>
          </RelativeLayout>
-      </ScrollView>
-   </LinearLayout>
+       </ScrollView>
+   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

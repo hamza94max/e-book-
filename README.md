@@ -1,7 +1,7 @@
 # E-book
 An e-Book app for dr Ibrahem El Sakran 
 
-To Download the app from google play : [ Google play ](https://play.google.com/store/apps/details?id=com.hamzaa.hamza.ebook)
+To Download the app from google play : [ Google play ](https://play.google.com/store/apps/details?id=com.ibrahem.hamza.ebook)
 
 # Tools 
 - [PDF viewer Library ](https://github.com/barteksc/AndroidPdfViewer)
