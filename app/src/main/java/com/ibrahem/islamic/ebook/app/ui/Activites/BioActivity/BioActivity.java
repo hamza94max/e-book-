@@ -1,10 +1,10 @@
-package com.ibrahem.hamza.ebook.Actvities;
+package com.ibrahem.islamic.ebook.app.ui.Activites.BioActivity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ibrahem.hamza.ebook.R;
+import ibrahem.islamic.ebook.R;
 
 public class BioActivity extends AppCompatActivity {
 

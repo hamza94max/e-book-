@@ -1,6 +1,6 @@
-package com.ibrahem.hamza.ebook.Actvities.ReadActivity;
+package com.ibrahem.islamic.ebook.app.ui.Activites.ReadActivity;
 
-import static com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations.BookDisplay.displayFromAsset;
+import static com.ibrahem.islamic.ebook.app.utill.BookDisplay.displayFromAsset;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations.PdfFiles;
-import com.ibrahem.hamza.ebook.Actvities.ReadActivity.Model.BookModel;
+import com.ibrahem.islamic.ebook.app.Data.Model.BookModel;
+import com.ibrahem.islamic.ebook.app.Data.PdfFiles;
 
-import ibrahem.hamza.ebook.R;
-import ibrahem.hamza.ebook.databinding.ActivityReadBinding;
+import ibrahem.islamic.ebook.R;
+import ibrahem.islamic.ebook.databinding.ActivityReadBinding;
 
 public class ReadActivity extends AppCompatActivity implements OnPageChangeListener {
 

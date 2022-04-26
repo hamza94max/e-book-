@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.Actvities;
+package com.ibrahem.islamic.ebook.app.ui.Activites.SplashScreen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,10 @@ import android.view.animation.AnimationUtils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import ibrahem.hamza.ebook.R;
-import ibrahem.hamza.ebook.databinding.ActivitySplashBinding;
+import com.ibrahem.islamic.ebook.app.ui.Activites.mainActivity.MainActivity;
+
+import ibrahem.islamic.ebook.R;
+import ibrahem.islamic.ebook.databinding.ActivitySplashBinding;
 
 
 public class SplashScreen extends AppCompatActivity {

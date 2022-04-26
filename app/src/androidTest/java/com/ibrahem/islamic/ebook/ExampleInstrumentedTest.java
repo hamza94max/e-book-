@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook;
+package com.ibrahem.islamic.ebook;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.hamza.ebook", appContext.getPackageName());
+        assertEquals("com.example.islamic.ebook", appContext.getPackageName());
     }
 }

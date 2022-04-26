@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.Actvities;
+package com.ibrahem.islamic.ebook.app.utill;
 
 import android.app.Activity;
 import android.content.Context;

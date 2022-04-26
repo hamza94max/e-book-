@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.ibrahem.hamza.ebook"
+        applicationId "com.ibrahem.islamic.ebook"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 3

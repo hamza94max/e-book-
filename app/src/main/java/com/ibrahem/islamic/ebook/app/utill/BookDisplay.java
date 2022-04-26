@@ -1,11 +1,11 @@
-package com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations;
+package com.ibrahem.islamic.ebook.app.utill;
 
 import android.content.Context;
 
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.ibrahem.hamza.ebook.Actvities.ReadActivity.Model.BookModel;
+import com.ibrahem.islamic.ebook.app.Data.Model.BookModel;
 
-import ibrahem.hamza.ebook.databinding.ActivityReadBinding;
+import ibrahem.islamic.ebook.databinding.ActivityReadBinding;
 
 public class BookDisplay {
 

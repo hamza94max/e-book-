@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.Actvities;
+package com.ibrahem.islamic.ebook.app.ui.Activites.mainActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +14,11 @@ import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.Task;
-import com.ibrahem.hamza.ebook.Actvities.ReadActivity.ReadActivity;
+import com.ibrahem.islamic.ebook.app.ui.Activites.BioActivity.BioActivity;
+import com.ibrahem.islamic.ebook.app.ui.Activites.ReadActivity.ReadActivity;
 
-import ibrahem.hamza.ebook.R;
-import ibrahem.hamza.ebook.databinding.ActivityMainBinding;
+import ibrahem.islamic.ebook.R;
+import ibrahem.islamic.ebook.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OpenBio(View view) {
-        Intent intent = new Intent(getApplicationContext(),BioActivity.class);
+        Intent intent = new Intent(getApplicationContext(), BioActivity.class);
         startActivity(intent);
     }
 

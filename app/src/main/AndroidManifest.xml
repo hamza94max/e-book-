@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ibrahem.hamza.ebook">
+    package="ibrahem.islamic.ebook">
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -16,9 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.ibrahem.hamza.ebook.Actvities.BioActivity" />
+        <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.BioActivity.BioActivity" />
         <activity
-            android:name="com.ibrahem.hamza.ebook.Actvities.SplashScreen"
+            android:name="com.ibrahem.islamic.ebook.app.ui.Activites.SplashScreen.SplashScreen"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +26,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ibrahem.hamza.ebook.Actvities.MainActivity" />
-        <activity android:name="com.ibrahem.hamza.ebook.Actvities.ReadActivity.ReadActivity" />
+        <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.mainActivity.MainActivity" />
+        <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.ReadActivity.ReadActivity" />
     </application>
 
 </manifest>

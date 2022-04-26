@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.Actvities.ReadActivity.Model;
+package com.ibrahem.islamic.ebook.app.Data.Model;
 
 public class BookModel {
     String assetFileName;

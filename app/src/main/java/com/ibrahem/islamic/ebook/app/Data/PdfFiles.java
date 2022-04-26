@@ -1,4 +1,4 @@
-package com.ibrahem.hamza.ebook.Actvities.ReadActivity.Funcations;
+package com.ibrahem.islamic.ebook.app.Data;
 
 
 import androidx.annotation.NonNull;
