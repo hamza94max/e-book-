@@ -35,5 +35,6 @@
     <string name="ShareApp">مشاركة التطبيق</string>
     <string name="MagariatBook">الماجريات</string>
     <string name="finishBook">انتهيت من الكتاب</string>
+    <string name="splash">splash</string>
 
 </resources>

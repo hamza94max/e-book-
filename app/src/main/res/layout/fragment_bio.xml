@@ -1,0 +1,23 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ibrahem.islamic.ebook.app.ui.Fragments.BioFragment.BioFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/bio"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/bio"
+            android:textSize="18sp"
+            android:textColor="#020000" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
