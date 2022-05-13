@@ -14,11 +14,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
 
-        <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.BioActivity.BioActivity" />
         <activity
             android:name="com.ibrahem.islamic.ebook.app.ui.Activites.SplashScreen.SplashScreen"
+            android:exported="true"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,6 @@
         </activity>
 
         <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.mainActivity.MainActivity" />
-        <activity android:name="com.ibrahem.islamic.ebook.app.ui.Activites.ReadActivity.ReadActivity" />
     </application>
 
 </manifest>
